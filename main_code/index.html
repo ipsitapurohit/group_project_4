@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form id="pricePredictionForm">
+            <label for="squareFeet">Square Feet of the House:</label>
+            <input type="text" id="squareFeet" name="squareFeet" required>
+            <br><br>
+
+            <label>Number of Bedrooms:</label>
+            <br><br>
+            <div class="radio-group">
+                <input type="radio" id="bedroom1" name="bedrooms" value="1" required>
+                <label for="bedroom1">1</label>
+
+                <input type="radio" id="bedroom2" name="bedrooms" value="2">
+                <label for="bedroom2">2</label>
+
+                <input type="radio" id="bedroom3" name="bedrooms" value="3">
+                <label for="bedroom3">3</label>
+
+                <input type="radio" id="bedroom4" name="bedrooms" value="4">
+                <label for="bedroom4">4</label>
+
+                <input type="radio" id="bedroom5" name="bedrooms" value="5">
+                <label for="bedroom5">5</label>
+            </div>
+            <br><br>
+
+            <label>Number of Bathrooms:</label>
+            <br><br>
+            <div class="radio-group">
+                <input type="radio" id="bathroom1" name="bathrooms" value="1" required>
+                <label for="bathroom1">1</label>
+
+                <input type="radio" id="bathroom2" name="bathrooms" value="2">
+                <label for="bathroom2">2</label>
+
+                <input type="radio" id="bathroom3" name="bathrooms" value="3">
+                <label for="bathroom3">3</label>
+
+                <input type="radio" id="bathroom4" name="bathrooms" value="4">
+                <label for="bathroom4">4</label>
+
+                <input type="radio" id="bathroom5" name="bathrooms" value="5">
+                <label for="bathroom5">5</label>
+            </div>
+            <br><br>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+                <option value="">Select Location</option>
+                <option value="New York, NY">New York, NY</option>
+                <option value="Los Angeles, CA">Los Angeles, CA</option>
+                <option value="Chicago, IL">Chicago, IL</option>
+                <option value="Houston, TX">Houston, TX</option>
+                <option value="Phoenix, AZ">Phoenix, AZ</option>
+            </select>
+            <br><br>
+
+            <button type="button" onclick="predictPrice()">Submit</button>
+        </form>
+        <br>
+        <div id="predictionResult"></div>
+    </div>
+
+    <script>
+        function predictPrice() {
+            const squareFeet = document.getElementById('squareFeet').value;
+            const bedrooms = document.querySelector('input[name="bedrooms"]:checked')?.value;
+            const bathrooms = document.querySelector('input[name="bathrooms"]:checked')?.value;
+            const location = document.getElementById('location').value;
+
+            if (squareFeet && bedrooms && bathrooms && location) {
+                const prediction = `Future price prediction for a house with ${squareFeet} square feet, ${bedrooms} bedrooms, ${bathrooms} bathrooms in ${location} is $XXX,XXX.`;
+                document.getElementById('predictionResult').innerText = prediction;
+            } else {
+                alert('Please fill out all fields');
+            }
+        }
+    </script>
+</body>
+</html>
