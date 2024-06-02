@@ -20,7 +20,9 @@ def get_estimated_price(location, bed, bath, sqft):
     if loc_index >= 0:
         x[loc_index] = 1
 
-    return round(__model.predict([x])[0], 2)
+    prediction = __model.predict([x])[0]
+   
+    return round(max(prediction, 0), 2)  # Ensure non-negative prediction
 
 def load_saved_artifacts():
     print("loading saved artifacts...start")
@@ -48,7 +50,7 @@ def get_data_columns():
 if __name__ == '__main__':
     load_saved_artifacts()
     print(get_location_names())
-    print(get_estimated_price('apopka', 3, 1, 1500))
+    print(get_estimated_price('apopka', 3, 1, 1000))
     print(get_estimated_price('miami', 3, 2, 1500))
     print(get_estimated_price('arcadia', 2, 2, 1000))  # other location
     print(get_estimated_price('atlantis', 4, 2, 2000))  # other location
