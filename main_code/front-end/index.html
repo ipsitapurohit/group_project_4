@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Florida Home Price Prediction</title>
+    <!-- Load jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Load custom JavaScript file -->
+    <script src="app.js"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Internal CSS for styling -->
+    <style>
+        h1 {
+            text-align: center; /* Center-align the heading */
+        }
+        .header {
+            color: rgb(229, 255, 0); 
+            font-family: Calibri, sans-serif; /* Use Calibri font */
+            font-weight: bold; /* Make the text bold */
+        }
+    </style>
+</head>
+<body>
+<div class="img"></div>
+
+<!-- Main heading -->
+<h1 class="header">HOME PRICE PREDICTOR</h1>
+
+<!-- Form for inputting area and number of beds -->
+<form class="form">
+    <h2>Area (in Square Feet)</h2>
+    <input class="area" type="text" id="uiSqft" class="floatLabel" name="uiSqft" value="1000">
+
+    <h2>Number of Beds</h2>
+    <div class="switch-field">
+        <!-- Radio buttons for selecting number of beds -->
+        <input type="radio" id="radio-bed-1" name="uiBed" value="1" checked/>
+        <label for="radio-bed-1">1</label>
+        <input type="radio" id="radio-bed-2" name="uiBed" value="2"/>
+        <label for="radio-bed-2">2</label>
+        <input type="radio" id="radio-bed-3" name="uiBed" value="3"/>
+        <label for="radio-bed-3">3</label>
+        <input type="radio" id="radio-bed-4" name="uiBed" value="4"/>
+        <label for="radio-bed-4">4</label>
+        <input type="radio" id="radio-bed-5" name="uiBed" value="5"/>
+        <label for="radio-bed-5">5</label>
+        <input type="radio" id="radio-bed-6" name="uiBed" value="6"/>
+        <label for="radio-bed-6">6</label>
+        <input type="radio" id="radio-bed-7" name="uiBed" value="7"/>
+        <label for="radio-bed-7">7</label>
+        <input type="radio" id="radio-bed-8" name="uiBed" value="8"/>
+        <label for="radio-bed-8">8</label>
+    </div>
+</form>
+
+<!-- Form for inputting number of baths and location -->
+<form class="form">
+    <h2>Number of Baths</h2>
+    <div class="switch-field">
+        <!-- Radio buttons for selecting number of baths -->
+        <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" checked/>
+        <label for="radio-bath-1">1</label>
+        <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2"/>
+        <label for="radio-bath-2">2</label>
+        <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+        <label for="radio-bath-3">3</label>
+        <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+        <label for="radio-bath-4">4</label>
+        <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+        <label for="radio-bath-5">5</label>
+        <input type="radio" id="radio-bath-6" name="uiBathrooms" value="6"/>
+        <label for="radio-bath-6">6</label>
+        <input type="radio" id="radio-bath-7" name="uiBathrooms" value="7"/>
+        <label for="radio-bath-7">7</label>
+        <input type="radio" id="radio-bath-8" name="uiBathrooms" value="8"/>
+        <label for="radio-bath-8">8</label>
+    </div>
+
+    <h2>Location / City</h2>
+    <div>
+        <!-- Dropdown for selecting location -->
+        <select class="location" name="" id="uiLocations">
+            <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+        </select>
+    </div>
+
+    <!-- Button to estimate the price -->
+    <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+
+    <!-- Div to display the estimated price -->
+    <div id="uiEstimatedPrice" class="result"><h2></h2></div>
+</form>
+</body>
+</html>
