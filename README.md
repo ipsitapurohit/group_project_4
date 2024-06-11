@@ -8,7 +8,7 @@ Project Overview: Introduces the project's goals and functionalities.
 
 Technical Aspects: Details the technologies used for data collection, analysis, modeling, and visualization.
 
-User Interface: Describes the user-friendly interface for interacting with the prediction model (if applicable).
+User Interface: Describes the user-friendly interface for interacting with the prediction model.
 
 Tableau Dashboard: Discusses the interactive visualization tool built with Tableau. Users can explore the dashboard at: https://public.tableau.com/app/profile/brennan.bradley/viz/Project_4_Dash/MainDashboard
 
@@ -56,7 +56,7 @@ The real_estate_model_build.ipynb script allows users to modify parameters like 
 Run python real_estate_model_build.ipynb to train the machine learning model.
 
 Model Evaluation:
-Analyze the results and consider improvements if necessary.
+Analyze the results and consider improvements.
 
 Web Interface:
 
